@@ -1,0 +1,90 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body, html {
+  height: 100%;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+.App {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.hero-section {
+  position: relative;
+  height: 100vh;
+  color: white;
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+  transition: background-image 1s ease-in-out; /* Smooth transition cho background */
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 123, 255, 0.4); /* Lớp phủ màu xanh */
+  z-index: 1;
+  pointer-events: none; /* Prevent overlay from blocking clicks */
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 25px 60px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 3; /* Ensure Navbar is above overlay and hero-content */
+  background-color: rgba(255, 255, 255, 0.9); /* Semi-transparent white for floating effect */
+  backdrop-filter: blur(5px); /* Blur effect for modern, floating look */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+  height: calc(100vh - 100px);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding-left: 60px;
+}
+
+.top-text {
+  font-size: 0.9rem;
+  letter-spacing: 2px;
+  color: #ffd700;
+  margin-bottom: 10px;
+}
+
+.main-heading {
+  font-size: 3.5rem;
+  font-weight: bold;
+  line-height: 1.2;
+}
+
+@media (max-width: 768px) {
+  .navbar {
+    flex-direction: column;
+    padding: 20px;
+  }
+
+  .hero-content {
+    padding-left: 20px;
+  }
+
+  .main-heading {
+    font-size: 2rem;
+  }
+}

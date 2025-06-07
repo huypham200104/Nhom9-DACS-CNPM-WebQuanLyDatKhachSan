@@ -1,0 +1,240 @@
+/* Root variables for consistent theming */
+:root {
+  --primary: #7d92ef; /* Vibrant blue for buttons, accents */
+  --primary-dark: #3a56d4; /* Darker shade for hover */
+  --secondary: #f72585; /* Accent for highlights */
+  --light: #f8f9fa; /* Background light shade */
+  --dark: #212529; /* Text and dark elements */
+  --gray: #6c757d; /* Muted text */
+  --border-radius: 12px; /* Softer, modern corners */
+  --shadow: 0 8px 24px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+  --shadow-hover: 0 12px 32px rgba(0, 0, 0, 0.15); /* Hover shadow */
+  --transition: all 0.3s ease; /* Smooth transitions */
+}
+
+/* General page styling */
+.room-customer-page {
+  background: linear-gradient(145deg, #f5f7fa, #e9ecef); /* Subtle gradient bg */
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  color: var(--dark);
+}
+
+/* Search section with gradient for visual appeal */
+.search-section {
+  background: linear-gradient(145deg, #c3e3ee, #f0f2f5);
+  padding: 2rem 0;
+  border-radius: 0 0 var(--border-radius) var(--border-radius);
+  box-shadow: var(--shadow);
+  margin-bottom: 2rem;
+}
+
+/* Filter card styling */
+.filter-card {
+  border: none;
+  border-radius: var(--border-radius);
+  box-shadow: var(--shadow);
+  background: white;
+  padding: 1.5rem;
+}
+
+.filter-card h5 {
+  font-weight: 600;
+  color: var(--dark);
+  border-bottom: 2px solid var(--primary);
+  padding-bottom: 0.75rem;
+  margin-bottom: 1.5rem;
+}
+
+.filter-card h6 {
+  font-weight: 500;
+  color: var(--dark);
+  margin-bottom: 1rem;
+}
+
+/* Star rating checkboxes */
+.form-check-label {
+  cursor: pointer;
+  color: var(--gray);
+  transition: var(--transition);
+}
+
+.form-check-input:checked {
+  background-color: #ffc107; /* Gold for stars */
+  border-color: #ffc107;
+}
+
+.form-check-input:focus {
+  box-shadow: 0 0 0 3px rgba(67, 97, 238, 0.3); /* Focus ring */
+}
+
+/* Price range styling */
+.price-range-display {
+  font-size: 0.9rem;
+  color: var(--gray);
+  font-weight: 500;
+}
+
+.form-range {
+  accent-color: var(--primary); /* Custom slider color */
+}
+
+/* Room card styling */
+.room-card {
+  border: none;
+  border-radius: var(--border-radius);
+  overflow: hidden;
+  box-shadow: var(--shadow);
+  transition: var(--transition);
+  background: white;
+}
+
+.room-card:hover {
+  transform: translateY(-8px); /* Lift on hover */
+  box-shadow: var(--shadow-hover);
+}
+
+.room-image-container {
+  position: relative;
+  height: 220px; /* Larger for better visual impact */
+  overflow: hidden;
+}
+
+.room-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: var(--transition);
+}
+
+.room-card:hover .room-image {
+  transform: scale(1.08); /* Subtle zoom on hover */
+}
+
+.price-badge {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  background: rgba(0, 0, 0, 0.75);
+  color: white;
+  padding: 8px 12px;
+  border-radius: 20px;
+  font-weight: 600;
+  font-size: 0.95rem;
+  z-index: 1;
+}
+
+/* Card content */
+.card-body {
+  padding: 1.5rem;
+}
+
+.card-title {
+  font-weight: 600;
+  color: var(--dark);
+  font-size: 1.25rem;
+  margin-bottom: 1rem;
+}
+
+.card-text small {
+  color: var(--gray);
+  font-size: 0.9rem;
+  display: flex;
+  align-items: center;
+  margin-bottom: 0.75rem;
+}
+
+.card-text i {
+  margin-right: 8px;
+  color: var(--primary);
+  font-size: 1rem;
+}
+
+/* Buttons */
+.btn-primary {
+  background-color: var(--primary);
+  border-color: var(--primary);
+  border-radius: 50px; /* Pill-shaped buttons */
+  padding: 0.6rem 1.5rem;
+  font-weight: 500;
+  transition: var(--transition);
+}
+
+.btn-primary:hover {
+  background-color: var(--primary-dark);
+  border-color: var(--primary-dark);
+  transform: translateY(-2px); /* Subtle lift on hover */
+}
+
+.btn-outline-primary {
+  border-color: var(--primary);
+  color: var(--primary);
+  border-radius: 50px;
+  padding: 0.6rem 1.5rem;
+  font-weight: 500;
+  transition: var(--transition);
+}
+
+.btn-outline-primary:hover {
+  background-color: var(--primary);
+  color: white;
+  transform: translateY(-2px);
+}
+
+/* Pagination */
+.pagination {
+  gap: 8px; /* Space between items */
+}
+
+.page-item .page-link {
+  border-radius: 8px;
+  color: var(--primary);
+  border: 1px solid var(--primary);
+  transition: var(--transition);
+}
+
+.page-item.active .page-link {
+  background-color: var(--primary);
+  border-color: var(--primary);
+  color: white;
+}
+
+.page-item .page-link:hover {
+  background-color: var(--primary);
+  color: white;
+  transform: translateY(-2px);
+}
+
+/* Alerts and loading */
+.alert {
+  border-radius: var(--border-radius);
+  padding: 1rem;
+  font-weight: 500;
+}
+
+.spinner-border {
+  width: 2.5rem;
+  height: 2.5rem;
+  border-width: 3px;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .search-section {
+    padding: 1.5rem 0;
+  }
+
+  .filter-card {
+    margin-bottom: 1.5rem;
+  }
+
+  .room-image-container {
+    height: 180px; /* Smaller for mobile */
+  }
+
+  .card-title {
+    font-size: 1.1rem;
+  }
+}

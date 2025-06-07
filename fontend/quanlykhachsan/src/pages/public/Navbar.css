@@ -1,0 +1,181 @@
+:root {
+  --navbar-bg: rgba(255, 255, 255, 0.98);
+  --navbar-text: #003087; /* Dark blue for current text */
+  --navbar-accent: #333333;
+  --navbar-hover: #f8f9fa; /* Light white background on hover */
+  --navbar-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
+  --navbar-user-bg: rgba(0, 0, 0, 0.05);
+  --navbar-dropdown-bg: #ffffff;
+  --navbar-logout: #333333;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 60px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  background-color: var(--navbar-bg);
+  backdrop-filter: blur(10px);
+  box-shadow: var(--navbar-shadow);
+  min-height: 80px;
+  transition: all 0.3s ease;
+}
+
+/* Transparent Navbar for homepage */
+.hero-section .navbar {
+  background-color: transparent;
+  backdrop-filter: none;
+  box-shadow: none;
+}
+
+.logo a {
+  font-size: 1.8rem;
+  font-weight: 700;
+  text-decoration: none;
+  color: var(--navbar-text);
+  font-family: 'Poppins', sans-serif;
+  letter-spacing: -0.5px;
+}
+
+.logo span {
+  color: var(--navbar-text);
+  font-weight: 800;
+}
+
+.navbar ul {
+  list-style: none;
+  display: flex;
+  gap: 25px;
+  margin: 0;
+  padding: 0;
+  align-items: center;
+}
+
+.navbar ul li a,
+.navbar ul li .user-email {
+  text-decoration: none;
+  color: var(--navbar-text);
+  font-size: 1.05rem;
+  font-weight: 600; /* Always bold */
+  cursor: pointer;
+  transition: all 0.3s ease;
+  padding: 8px 12px;
+  border-radius: 6px;
+  font-family: 'Poppins', sans-serif;
+}
+
+.navbar ul li a:hover,
+.navbar ul li .user-email:hover {
+  color: #000000; /* Black text on hover */
+  background-color: var(--navbar-hover); /* Light white background */
+}
+
+.navbar ul li .user-email {
+  text-decoration: none;
+  color: var(--navbar-text);
+  font-size: 1.05rem;
+  font-weight: 600; /* Always bold */
+  cursor: pointer;
+  transition: all 0.3s ease;
+  padding: 8px 12px;
+  border-radius: 6px;
+  font-family: 'Poppins', sans-serif;
+  background-color: var(--navbar-user-bg);
+  border: none; /* Loại bỏ viền */
+  margin: 0; /* Loại bỏ margin thừa */
+}
+
+.user-menu {
+  position: relative;
+}
+
+.dropdown {
+  display: none;
+  position: absolute;
+  top: 100%;
+  right: 0;
+  background-color: var(--navbar-dropdown-bg);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+  list-style: none;
+  padding: 10px 0;
+  min-width: 200px;
+  z-index: 1001;
+  opacity: 0;
+  transform: translateY(10px);
+  transition: all 0.3s ease;
+}
+
+.user-menu:hover .dropdown {
+  display: block;
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.dropdown li {
+  padding: 0;
+}
+
+.dropdown li a {
+  display: block;
+  color: var(--navbar-text);
+  text-decoration: none;
+  transition: all 0.3s ease;
+  padding: 10px 20px;
+  font-size: 0.95rem;
+  font-weight: 600; /* Always bold in dropdown */
+}
+
+.dropdown li a:hover {
+  background-color: var(--navbar-hover); /* Light white background */
+  color: #000000; /* Black text on hover */
+  padding-left: 25px;
+}
+
+/* Active link styling */
+.navbar ul li a.active {
+  color: var(--navbar-text);
+  font-weight: 700;
+}
+
+/* Logout button styling */
+.navbar ul li a[href="/logout"] {
+  color: var(--navbar-text);
+}
+
+.navbar ul li a[href="/logout"]:hover {
+  background-color: var(--navbar-hover); /* Light white background */
+}
+
+@media (max-width: 768px) {
+  .navbar {
+    flex-direction: column;
+    padding: 15px 20px;
+    min-height: auto;
+  }
+
+  .navbar ul {
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 15px;
+    width: 100%;
+  }
+
+  .dropdown {
+    position: static;
+    box-shadow: none;
+    background-color: transparent;
+    display: none;
+    opacity: 1;
+    transform: none;
+  }
+
+  .user-menu:hover .dropdown {
+    display: block;
+  }
+}
